@@ -131,6 +131,58 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
+# reviews
 
+Review.create!({
+  product_id: 1,
+  user_id: 1337,
+  description: "fucking sick, man",
+  rating: 5
+  })
+Review.create!({
+  product_id: 1,
+  user_id: 5,
+  description: "JAWESOME",
+  rating: 5
+  })
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: "so gud",
+  rating: 5
+  })
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: "sok",
+  rating: 4
+  })
+# users
+
+User.create!({
+
+  first_name: 'Gabriel',
+  last_name: 'Hildreth',
+  email: 'gabe@gabe.org',
+  password_digest: 'asdf'
+  })
+
+User.create!({
+
+  first_name: 'Samwise',
+  last_name: 'Gamgee',
+  email: 'sam@sam.sam',
+  password_digest: 'garden'
+  })
+
+User.create!({
+
+  first_name: 'Frodo',
+  last_name: 'Baggins',
+  email: 'fro@fro.fro',
+  password_digest: 'ring'
+  })
 
 puts "DONE!"

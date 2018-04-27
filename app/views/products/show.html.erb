@@ -26,6 +26,19 @@
       </div>
     </div>
 
+    <div class="row">
+      <dl>
+        <dt>Review</dt> <br>
+          <dd> <% @product.reviews.each do |r| %> </dd>
+
+          <dd> User: <%= r.user_id %> </dd>
+          <dd> 🌟 Rating: <%= r.rating %> / 5 🌟</dd>
+          <dd> Description: <%= r.description %></dd><br>
+
+              <% end %>
+
+      </dl>
+</div>
   </article>
 
 </section>
