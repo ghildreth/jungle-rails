@@ -26,19 +26,42 @@
       </div>
     </div>
 
-    <div class="row">
-      <dl>
-        <dt>Review</dt> <br>
-          <dd> <% @product.reviews.each do |r| %> </dd>
+    <div class="col-sm-2">
+        <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
+        <dt>New Review:</dt> <br>
+        <ul>
+          <%= f.fields_for :review do |review_form| %>
+          <li>
+           <dl class ="dl-horizontal" <%= review_form.label :description %>
+            <%= review_form.text_area :description %>
 
-          <dd> User: <%= r.user_id %> </dd>
-          <dd> 🌟 Rating: <%= r.rating %> / 5 🌟</dd>
-          <dd> Description: <%= r.description %></dd><br>
+            <%= review_form.label :rating %>
+            <%= review_form.select :rating, [1, 2, 3, 4, 5] %>
+            <%= review_form.submit("Submit")%>
+          </li>
+        <% end %>
+          <% end %>
+
+        </ul>
+
+    </div>
+
+    <div class="row">
+
+      <dl class="dl-horizontal">
+        <dt>Reviews:</dt> <br>
+          <dd> <% @product.reviews.each do |r| %> </dd>
+          <dt><strong>User:</strong> </dt>
+          <dd> <%= r.user_id %> </dd>
+          <dt><strong>🌟 Rating:</strong> </dt>
+          <dd> <%= r.rating %> / 5 </dd>
+          <dt><strong>Description: </strong></dt>
+          <dd><%= r.description %></dd><br>
 
               <% end %>
 
       </dl>
-</div>
+    </div>
   </article>
 
 </section>
