@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content''text/html; charset=utf-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1> Thanks for shopping IN THE JUNGLE! Here's your order# <%= @order.id %></h1>
+
+    <tbody>  <%= render partial: '/orders/line_item', collection: @order.line_items %>
+    </tbody>
+
+  <p>
+    Come back to shop any time!
+  </p>
+  <p> Thank you and have a great day! </p>
+</body>
+
+</html>

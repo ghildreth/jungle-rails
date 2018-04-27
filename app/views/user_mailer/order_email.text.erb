@@ -1,0 +1,12 @@
+Thanks for shopping at the JUNGLE. Here's your order#<%= @order.id %>
+=========================================================================
+
+You have successfully ordered these items:
+<%= render partial: '/orders/line_item', collection: @order.line_items %>
+
+ And this was your total: $<%= @order.total %>
+
+
+Please come back to shop anytime.
+
+Thank you and have great day!
