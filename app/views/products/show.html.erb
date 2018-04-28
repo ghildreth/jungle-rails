@@ -26,45 +26,49 @@
       </div>
     </div>
 
-  <% if current_user %>
+    <% if current_user %>
+      <div class="row">
 
-    <div class="col-sm-2">
-        <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
-        <dt>New Review:</dt> <br>
-        <ul>
-          <%= f.fields_for :review do |review_form| %>
-          <li>
-           <dl class ="dl-horizontal" <%= f.label :description %>
-            <%= f.text_area :description %>
-
-            <%= f.label :rating %>
-            <%= f.select :rating, [1, 2, 3, 4, 5] %>
-            <%= f.submit("Submit")%>
-          </li>
-        <% end %>
+        <div class="col-sm-4">
+          <%= form_for :review, url: product_reviews_path(@product.id) do |f| %>
+            <div>New Review:</div> <br>
+            <ul>
+              <%= f.fields_for :review do |review_form| %>
+              <li>
+                <div class ="dl-horizontal">
+                  <%= f.label :description %>
+                  <%= f.text_area :description %>
+                  <%= f.label :rating %>
+                  <%= f.select :rating, [1, 2, 3, 4, 5] %>
+                  <%= f.submit("Submit")%>
+                </div>
+              </li>
+            <% end %>
+            </ul>
           <% end %>
-
-        </ul>
-    </div>
-
-  <% else %>
-  <% end %>
+        </div>
+      </div>
+    <% end %>
     <div class="row">
 
-      <dl class="dl-horizontal">
-        <dt>Reviews:</dt> <br>
-          <dd> <% @product.reviews.reverse.each do |r| %> </dd>
+      <h4> Reviews </h4>
+      <% @product.reviews.reverse.each do |r| %>
+        <dl>
           <dt><strong>User:</strong> </dt>
           <dd> <%= r.user_id %> </dd>
           <dt><strong>🌟 Rating:</strong> </dt>
           <dd> <%= r.rating %> / 5 </dd>
           <dt><strong>Description: </strong></dt>
           <dd><%= r.description %></dd><br>
-
-              <% end %>
-
-      </dl>
+          <% if current_user %>
+          <% if r.user_id == current_user.id %>
+          <%= button_to 'Delete Review', [r.product, r],
+            method: :delete,
+            data: { confirm: 'Are you sure?'} %>
+          <% end %>
+          <% end %>
+        </dl>
+      <% end %>
     </div>
   </article>
-
 </section>
