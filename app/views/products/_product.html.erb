@@ -23,6 +23,12 @@
     </aside>
   <% end %>
 
+  <% if product.reviews.average(:rating) %>
+    <h4>Rating: <%= (product.reviews.average(:rating)).round(1)%>/5</h4>
+  <% else %>
+    <h4>Be the first to rate this product!</h4>
+  <% end %>
+
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
   </aside>

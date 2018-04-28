@@ -15,6 +15,13 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
+## Screen shot
+![The Product Catalog](https://user-images.githubusercontent.com/34799149/39391484-dddafaba-4a58-11e8-9035-06fcd78a47a5.png)
+
+![Indepth Catalog View](https://user-images.githubusercontent.com/34799149/39391488-f510eae6-4a58-11e8-9596-35f2feb95a81.png)
+
+![This is the Post Checkout Screen](https://user-images.githubusercontent.com/34799149/39391470-adb20536-4a58-11e8-8b87-f7cf958a119e.png)
+
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
