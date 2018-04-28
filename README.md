@@ -16,12 +16,12 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 9. Run `bin/rails s -b 0.0.0.0` to start the server
 
 ## Screen shot
-![The Product Catalog](https://user-images.githubusercontent.com/34799149/39391484-dddafaba-4a58-11e8-9035-06fcd78a47a5.png)
+![The Product Catalog](https://user-images.githubusercontent.com/34799149/39391562-6c8319cc-4a5a-11e8-8e72-a4e9aeba86d7.png)
 
-![Indepth Catalog View](https://user-images.githubusercontent.com/34799149/39391488-f510eae6-4a58-11e8-9596-35f2feb95a81.png)
 
-![This is the Post Checkout Screen](https://user-images.githubusercontent.com/34799149/39391470-adb20536-4a58-11e8-8b87-f7cf958a119e.png)
+![Indepth Catalog View](https://user-images.githubusercontent.com/34799149/39391563-6ca26fd4-4a5a-11e8-9650-1d2edd1da4fc.png)
 
+![This is the Post Checkout Screen](https://user-images.githubusercontent.com/34799149/39391564-6cb5bb34-4a5a-11e8-916d-ced76b41f793.png)
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
